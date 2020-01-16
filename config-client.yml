@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    active: dev
+
+---
+server:
+  port: 8201
+#spring的配置
+spring:
+  profiles: dev
+  application:
+  #服务名称
+    name: springcloud-user-provider 
+
+#Eureka的配置，服务注册到哪里    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/   #注册中心地址
+      
+---
+server:
+  port: 8202
+#spring的配置
+spring:
+  profiles: test
+  application:
+  #服务名称
+    name: springcloud-user-provider 
+
+#Eureka的配置，服务注册到哪里    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/   #注册中心地      
